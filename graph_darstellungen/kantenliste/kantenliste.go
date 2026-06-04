@@ -21,18 +21,8 @@ func (g *EdgeListGraph) GetNodes() []int {
 	// - Da Knoten sowohl als Start- als auch als Zielknoten in den Kanten auftreten können, sollten Sie eine Menge verwenden, um Duplikate zu vermeiden.
 	// - Eine Menge können Sie in Go mit einer Map realisieren, z.B. `map[int]struct{}` oder `map[int]bool`.
 
-	nodeSet := make(map[int]struct{})
-	for _, edge := range g.Edges {
-		nodeSet[edge[0]] = struct{}{}
-		nodeSet[edge[1]] = struct{}{}
-	}
-
-	nodes := make([]int, 0, len(nodeSet))
-	for node := range nodeSet {
-		nodes = append(nodes, node)
-	}
-
-	return nodes
+	// TODO
+	return nil
 }
 
 // GetEdges gibt die Liste aller Kanten im Graphen zurück.
