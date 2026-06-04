@@ -39,13 +39,7 @@ func (g *AdjacencyMatrixGraph) GetEdges() [][3]int {
 	// - Für jede Zelle, die ein Gewicht ungleich 0 enthält, erstellen Sie einen Eintrag der Form [3]int{start, end, weight}.
 
 	edges := make([][3]int, 0)
-	for i := range g.Edges {
-		for j := range g.Edges[i] {
-			if g.Edges[i][j] != 0 {
-				edges = append(edges, [3]int{i, j, g.Edges[i][j]})
-			}
-		}
-	}
+	// TODO
 	return edges
 }
 
@@ -54,7 +48,7 @@ func (g *AdjacencyMatrixGraph) AddEdge(start, end, weight int) {
 	// Hinweis:
 	// - Aktualisieren Sie die Zelle in der Adjazenzmatrix `g.Edges`, die der Kante von `start` zu `end` entspricht, mit dem angegebenen Gewicht.
 
-	g.Edges[start][end] = weight
+	// TODO
 }
 
 // RemoveEdge entfernt die gerichtete Kante von start zu end, falls sie existiert.
@@ -62,7 +56,7 @@ func (g *AdjacencyMatrixGraph) RemoveEdge(start, end int) {
 	// Hinweis:
 	// - Setzen Sie die Zelle in der Adjazenzmatrix `g.Edges`, die der Kante von `start` zu `end` entspricht, auf 0, um die Kante zu entfernen.
 
-	g.Edges[start][end] = 0
+	// TODO
 }
 
 // GetNeighbors gibt die Nachbarn eines Knotens zurück, d.h. alle Knoten,
@@ -73,10 +67,6 @@ func (g *AdjacencyMatrixGraph) GetNeighbors(node_id int) []int {
 	// - Alle Spalten, die ein Gewicht ungleich 0 enthalten, entsprechen Nachbarn von `node_id`.
 
 	neighbors := make([]int, 0)
-	for j := range g.Edges[node_id] {
-		if g.Edges[node_id][j] != 0 {
-			neighbors = append(neighbors, j)
-		}
-	}
+	// TODO
 	return neighbors
 }

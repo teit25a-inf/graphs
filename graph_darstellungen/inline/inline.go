@@ -1,7 +1,5 @@
 package inline
 
-import "slices"
-
 // InlineGraph ist eine Implementierung des Graph-Interfaces, die
 // die eine Liste von Knoten enthält, wobei jeder Knoten seine Nachbarn
 // und die Gewichte der Kanten zu diesen Nachbarn direkt speichert.
@@ -33,9 +31,7 @@ func (g *InlineGraph) GetNodes() []int {
 	// - Extrahieren Sie die ID jedes Knotens und geben Sie sie zurück.
 
 	var nodes []int
-	for _, node := range g.Nodes {
-		nodes = append(nodes, node.ID)
-	}
+	// TODO
 	return nodes
 }
 
@@ -47,11 +43,7 @@ func (g *InlineGraph) GetEdges() [][3]int {
 	// - Für jeden Knoten und seine Nachbarn erstellen Sie Einträge der Form [3]int{start, end, weight}.
 
 	var edges [][3]int
-	for _, node := range g.Nodes {
-		for i, neighbor := range node.Neighbors {
-			edges = append(edges, [3]int{node.ID, neighbor, node.Weights[i]})
-		}
-	}
+	// TODO
 	return edges
 }
 
@@ -62,30 +54,7 @@ func (g *InlineGraph) AddEdge(start, end, weight int) {
 	// - Wenn er nicht existiert, fügen Sie ihn hinzu.
 	// - Fügen Sie die Nachbar- und Gewichtsinformationen zum Startknoten hinzu.
 
-	startIndex := slices.IndexFunc(g.Nodes, func(node struct {
-		ID        int
-		Neighbors []int
-		Weights   []int
-	}) bool {
-		return node.ID == start
-	})
-
-	if startIndex == -1 {
-		g.Nodes = append(g.Nodes, struct {
-			ID        int
-			Neighbors []int
-			Weights   []int
-		}{
-			ID:        start,
-			Neighbors: []int{},
-			Weights:   []int{},
-		})
-		startIndex = len(g.Nodes) - 1
-	}
-
-	startNode := &g.Nodes[startIndex]
-	startNode.Neighbors = append(startNode.Neighbors, end)
-	startNode.Weights = append(startNode.Weights, weight)
+	// TODO
 }
 
 // RemoveEdge entfernt die gerichtete Kante von start zu end, falls sie existiert.
@@ -95,17 +64,7 @@ func (g *InlineGraph) RemoveEdge(start, end int) {
 	// - Wenn er existiert, durchsuchen Sie seine Nachbarn, um die Kante zu `end` zu finden.
 	// - Entfernen Sie die Nachbar- und Gewichtsinformationen für diese Kante.
 
-	for i := range g.Nodes {
-		if g.Nodes[i].ID == start {
-			for j := range g.Nodes[i].Neighbors {
-				if g.Nodes[i].Neighbors[j] == end {
-					g.Nodes[i].Neighbors = append(g.Nodes[i].Neighbors[:j], g.Nodes[i].Neighbors[j+1:]...)
-					g.Nodes[i].Weights = append(g.Nodes[i].Weights[:j], g.Nodes[i].Weights[j+1:]...)
-					return
-				}
-			}
-		}
-	}
+	// TODO
 }
 
 // GetNeighbors gibt die Nachbarn eines Knotens zurück, d.h. alle Knoten,
@@ -116,10 +75,6 @@ func (g *InlineGraph) GetNeighbors(node_id int) []int {
 	// - Wenn der Knoten gefunden wird, geben Sie seine Nachbarn zurück.
 	// - Wenn der Knoten nicht gefunden wird, geben Sie eine leere Liste zurück.
 
-	for _, node := range g.Nodes {
-		if node.ID == node_id {
-			return node.Neighbors
-		}
-	}
+	// TODO
 	return []int{}
 }

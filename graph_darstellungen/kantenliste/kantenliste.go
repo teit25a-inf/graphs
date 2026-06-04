@@ -41,7 +41,8 @@ func (g *EdgeListGraph) GetEdges() [][3]int {
 	// Hinweis:
 	// - Die Kanten sind bereits in der Liste `g.Edges` gespeichert, daher können Sie diese direkt zurückgeben.
 
-	return g.Edges
+	// TODO
+	return nil
 }
 
 // AddEdge fügt eine gerichtete Kante von start zu end mit dem angegebenen Gewicht hinzu.
@@ -49,7 +50,8 @@ func (g *EdgeListGraph) AddEdge(start, end, weight int) {
 	// Hinweis:
 	// - Fügen Sie die neue Kante als Tripel (start, end, weight) zur Liste `g.Edges` hinzu.
 
-	g.Edges = append(g.Edges, [3]int{start, end, weight})
+	// TODO
+
 }
 
 // RemoveEdge entfernt die gerichtete Kante von start zu end, falls sie existiert.
@@ -58,12 +60,7 @@ func (g *EdgeListGraph) RemoveEdge(start, end int) {
 	// - Durchsuchen Sie die Liste `g.Edges`, um die Kante von `start` zu `end` zu finden.
 	// - Wenn die Kante gefunden wird, entfernen Sie sie aus der Liste.
 
-	for i, edge := range g.Edges {
-		if edge[0] == start && edge[1] == end {
-			g.Edges = append(g.Edges[:i], g.Edges[i+1:]...)
-			return
-		}
-	}
+	// TODO
 }
 
 // GetNeighbors gibt die Nachbarn eines Knotens zurück, d.h. alle Knoten,
@@ -74,10 +71,6 @@ func (g *EdgeListGraph) GetNeighbors(node_id int) []int {
 	// - Sammeln Sie die Zielknoten dieser Kanten und geben Sie sie zurück.
 
 	neighbors := make([]int, 0)
-	for _, edge := range g.Edges {
-		if edge[0] == node_id {
-			neighbors = append(neighbors, edge[1])
-		}
-	}
+	// TODO
 	return neighbors
 }
