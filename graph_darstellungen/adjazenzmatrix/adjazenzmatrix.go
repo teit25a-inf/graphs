@@ -25,9 +25,7 @@ func (g *AdjacencyMatrixGraph) GetNodes() []int {
 	// - Die Knoten-IDs entsprechen den Zeilennummern in der Matrix.
 
 	nodes := make([]int, len(g.Edges))
-	for i := range g.Edges {
-		nodes[i] = i
-	}
+	// TODO
 	return nodes
 }
 
