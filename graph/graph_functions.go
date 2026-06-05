@@ -26,7 +26,7 @@ func HasEdge(g GraphRepr, start, end int) bool {
 }
 
 // GetEdgeWeight gibt das Gewicht der gerichteten Kante von start zu end zurück,
-// oder -1, wenn die Kante nicht existiert.
+// oder 0, wenn die Kante nicht existiert.
 func GetEdgeWeight(g GraphRepr, start, end int) int {
 	// Hinweis:
 	// - Durchsuchen Sie die Liste der Kanten, die Sie mit `GetEdges` erhalten, um die Kante von `start` zu `end` zu finden.
