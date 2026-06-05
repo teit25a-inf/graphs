@@ -29,7 +29,7 @@ func GetEdgeWeight(g GraphRepr, start, end int) int {
 	// - Wenn die Kante nicht gefunden wird, geben Sie -1 zurück.
 
 	// TODO
-	return -1
+	return 0
 }
 
 // DotString gibt eine String-Darstellung des Graphen im DOT-Format zurück,
